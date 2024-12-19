@@ -11,7 +11,7 @@ def max_groups(n, numbers):
     groups = 0
     current_even = True  # 첫 번째 묶음은 짝수
     
-    while even_count > 0 or odd_count > 0:
+    while odd_count > 0:
         if current_even:  # 짝수 묶음 구성
             if even_count > 0:  # 짝수 하나 사용
                 even_count -= 1
@@ -30,8 +30,11 @@ def max_groups(n, numbers):
         # 다음 묶음은 반대 (짝수 → 홀수 → 짝수 → ...)
         current_even = not current_even
         #print(even_count, odd_count)
+    
+    if even_count > 0 :
+        groups += 1
 
-    if even_count < 0 or odd_count < 0 :
+    if odd_count < 0 :
         groups -= 2
 
     return groups
