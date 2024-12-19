@@ -8,9 +8,12 @@ arr_k.sort(reverse=True)
 
 sec = 0
 while len(arr_k) > 0 :
+    if arr_n[0] < arr_k[0] :
+        sec = -1
+        break
+        
     sec += 1
     for i in range(n) :
-
         for j in range(len(arr_k)) :
             if arr_n[i] >= arr_k[j] :
                 arr_k.pop(j)
