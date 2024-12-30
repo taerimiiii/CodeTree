@@ -6,13 +6,12 @@ def merge_sort(arr, low, high) :
         merge(arr, low, mid, high)
 
 def merge(arr, low, mid, high) :
-    global n
-    merge_arr = [0] * n
+    merge_arr = [0] * (high-low+1)
 
     i = low
     j = mid + 1
 
-    k = low
+    k = 0
     while i <= mid and j <= high :
         if arr[i] <= arr[j] :
             merge_arr[k] = arr[i]
@@ -33,8 +32,8 @@ def merge(arr, low, mid, high) :
         j += 1
         k += 1
 
-    for i in range(low, k) :
-        arr[i] = merge_arr[i]
+    for i in range(k) :
+        arr[low+i] = merge_arr[i]
 
 
 n = int(input())
