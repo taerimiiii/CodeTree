@@ -35,16 +35,10 @@ dxs, dys = get_dxdy(direct)
 move_direct = 0
 temp = arr[x][y]
 
-if direct :
-    x, y, temp, move_direct = move(m4, x, y, temp, move_direct)
-    x, y, temp, move_direct = move(m3, x, y, temp, move_direct)
-    x, y, temp, move_direct = move(m2, x, y, temp, move_direct)
-    x, y, temp, move_direct = move(m1, x, y, temp, move_direct)
-else :
-    x, y, temp, move_direct = move(m1, x, y, temp, move_direct)
-    x, y, temp, move_direct = move(m2, x, y, temp, move_direct)
-    x, y, temp, move_direct = move(m3, x, y, temp, move_direct)
-    x, y, temp, move_direct = move(m4, x, y, temp, move_direct)
+order = [m4, m3, m2, m1] if direct else [m1, m2, m3, m4]
+
+for m in order:
+    x, y, temp, move_direct = move(m, x, y, temp, move_direct)
 
 for i in range(n) :
     for j in range(n) :
