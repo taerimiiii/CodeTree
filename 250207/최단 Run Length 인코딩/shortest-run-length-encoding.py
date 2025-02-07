@@ -47,6 +47,9 @@ for i in range(lenth) :
 
 min_len = 20
 for _ in range(lenth) :
+    if lenth == 1 :
+        min_len = 2
+        break
     RLE_a_len = run_length_encoding(list_a)
     min_len = min(min_len, RLE_a_len)
     list_a = shift(list_a)
