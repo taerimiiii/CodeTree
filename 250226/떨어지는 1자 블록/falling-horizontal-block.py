@@ -1,9 +1,10 @@
 def get_blockstop_row(n, m, k) :
-    for row in range(n-1) :
+    for row in range(n) :
+        if row == n-1 :
+            return row
         for col in range(k-1, k+m-1) :
             if arr[row+1][col] == 1 :
                 return row
-    return row+1 
 
 def block_on(row, m, k) :
     for col in range(k-1, k+m-1) :
