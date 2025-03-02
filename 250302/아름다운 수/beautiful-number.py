@@ -1,0 +1,25 @@
+def choose(curr_len) :
+    global n, cnt
+
+    if curr_len == n :
+        cnt += 1
+        return
+    
+    elif curr_len > n :
+        return
+    
+    for select in range(1, n+1) :
+        answer.append(select)
+        choose(curr_len + select)
+        answer.pop()
+    
+    return
+
+
+n = int(input())
+cnt = 0
+answer = []
+
+choose(0)
+
+print(cnt)
