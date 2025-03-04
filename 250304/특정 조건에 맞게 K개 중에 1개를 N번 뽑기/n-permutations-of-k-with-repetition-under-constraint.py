@@ -1,4 +1,3 @@
-# 터질 폭탄의 종류 선택하는 함수
 def choose(curr_cnt) :
     global n
 
@@ -7,15 +6,7 @@ def choose(curr_cnt) :
         return
     
     for select in range(1, k + 1) :
-        if curr_cnt == 1 or curr_cnt == 2 :
-            answer.append(select)
-            choose(curr_cnt + 1)
-            answer.pop()
-        elif curr_cnt >= 3 and answer[-1] != select :
-            answer.append(select)
-            choose(curr_cnt + 1)
-            answer.pop()
-        elif curr_cnt >= 3 and answer[-2] != select :
+        if (curr_cnt == 1 or curr_cnt == 2) or (curr_cnt >= 3 and answer[-1] != select) or (curr_cnt >= 3 and answer[-2] != select) :
             answer.append(select)
             choose(curr_cnt + 1)
             answer.pop()
