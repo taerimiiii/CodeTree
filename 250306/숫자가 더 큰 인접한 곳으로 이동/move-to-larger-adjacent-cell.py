@@ -1,5 +1,5 @@
 def move(n, r, c) :
-    dxs, dys = [1, -1, 0, 0], [0, 0, -1, 1]
+    dxs, dys = [-1, 1, 0, 0], [0, 0, -1, 1]
     x, y = r, c
 
     for dx, dy in zip(dxs, dys) :
