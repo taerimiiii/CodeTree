@@ -2,7 +2,7 @@
 a = int(input())
 
 # 출력
-if !(a % 13) or !(a % 19) :
+if (not a % 13) or (not a % 19) :
     print("True")
 
 else :
